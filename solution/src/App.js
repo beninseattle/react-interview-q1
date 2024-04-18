@@ -1,10 +1,10 @@
-import NameForm from './NameForm';
+import PersonForm from './PersonForm';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <NameForm />
+      <PersonForm />
     </div>
   );
 }

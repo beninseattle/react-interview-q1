@@ -1,9 +1,114 @@
+/* Basic stuff here using flexbox to align things and using media query to change it for
+   larger widths */
 body {
   background-color: white;
   color: black;
+  margin: 1em;
 }
 
-.App {
-  /* text-align: center; */
+.form-input {
+  margin-top: 2em;
 }
 
+.controls {
+  margin-top: 1em;
+}
+
+.controls button {
+  margin-right: 2em;
+}
+
+.form-input .ms-TextField-wrapper,
+.form-input .ms-Dropdown-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input .ms-Spinner {
+  position: absolute;
+  top: 36px;
+  right: 12px;
+}
+
+.table {
+  margin-top: 1em;
+  border: black 1px solid;
+}
+
+.ms-DetailsHeader {
+  background-color: lightgray;
+  border-bottom: unset;
+  padding-top: unset;
+  padding-bottom: unset;
+}
+
+.ms-DetailsHeader-cell, .ms-DetailsRow-cell {
+  border-right: black 1px solid;
+}
+
+.ms-DetailsHeader-cell:last-child, .ms-DetailsRow-cell:last-child {
+  border-right: unset;
+}
+
+.ms-DetailsRow {
+  border-bottom: unset;
+}
+
+@media (min-width: 800px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-input, .controls, .ms-Viewport {
+    max-width: 600px;
+  }
+
+  .form-input .ms-TextField-wrapper,
+  .form-input .ms-Dropdown-container {
+    flex-direction: row;
+  }
+
+  .form-input .ms-TextField-wrapper label,
+  .form-input .ms-Dropdown-container label {
+    text-align: right;
+    width: 5rem;
+  }
+  
+  .form-input .ms-Spinner {
+    top: 8px;
+  }
+  
+  .ms-Dropdown {
+    width: 500px;
+  }
+
+  .ms-TextField-fieldGroup {
+    width: 500px;
+  }
+
+  .form-input .ms-TextField > span {
+    display: block;
+    margin-left: calc(5rem + 1em);
+  }
+
+  .ms-Label {
+    margin-right: 1em;
+  }
+
+  .controls {
+    min-width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+  }
+  .controls button {
+    margin-right: unset;
+    margin-left: 2em;
+  }
+
+  .table {
+    min-width: 600px;
+  }
+}
